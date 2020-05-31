@@ -6,7 +6,7 @@ import (
 )
 
 func TestHello(t *testing.T) {
-	tests := []struct {
+	tts := []struct {
 		name  string
 		input string
 		want  string
@@ -15,10 +15,10 @@ func TestHello(t *testing.T) {
 		{name: "happy path: empty arg", input: "", want: "Hello, World!"},
 	}
 
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			if Hello(test.input) != test.want {
-				t.Errorf("want: %s\n got: %s", test.want, Hello(test.name))
+	for _, tt := range tts {
+		t.Run(tt.name, func(t *testing.T) {
+			if Hello(tt.input) != tt.want {
+				t.Errorf("want: %s\n got: %s", tt.want, Hello(tt.name))
 			}
 		})
 	}
@@ -33,5 +33,6 @@ func BenchmarkHello(b *testing.B) {
 func ExampleHello() {
 	greeting := Hello("Alexander")
 	fmt.Println(greeting)
-	// Output: Hello, Alexander!
+	// Output:
+	// Hello, Alexander!
 }
