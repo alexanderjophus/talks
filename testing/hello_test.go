@@ -12,6 +12,7 @@ func TestHello(t *testing.T) {
 		want  string
 	}{
 		{name: "happy path: Alexander", input: "Alexander", want: "Hello, Alexander!"},
+		{name: "happy path: empty arg", input: "", want: "Hello, World!"},
 	}
 
 	for _, test := range tests {
