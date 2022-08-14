@@ -1,0 +1,36 @@
+apiVersion: troubleshoot.sh/v1beta2
+kind: SupportBundle
+metadata:
+  name: sample
+spec:
+  collectors:
+    - copy:
+        selector:
+          - run=busybox
+        namespace: default
+        containerPath: /etc/foo
+        containerName: busybox
+  analyzers:
+    - yamlCompare:
+        checkName: Compare YAML Example
+        fileName: default/busybox/busybox/etc/foo/secrets.yaml
+        path: username
+        value: "Alexander"
+        outcomes:
+          - fail:
+              when: "false"
+              message: The collected data does not match the value.
+          - pass:
+              when: "true"
+              message: The collected data matches the value
+---
+apiVersion: troubleshoot.sh/v1beta2
+kind: Redactor
+metadata:
+  name: Some sensitive info
+spec:
+  redactors:
+  - name: all files
+    removals:
+      yamlPath:
+      - password

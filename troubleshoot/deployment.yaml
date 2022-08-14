@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  labels:
+    run: busybox
+spec:
+  containers:
+    - command:
+      - sleep
+      - "3600"
+      image: busybox
+      name: busybox
+      volumeMounts:
+        - name: foo
+          mountPath: /etc/foo/secrets.yaml # needed for volumeMounts
+          subPath: secrets.yaml # needed otherwise it's a symlink
+          readOnly: true
+  volumes:
+    - name: foo
+      secret:
+        secretName: mysecret
+        optional: false
