@@ -20,6 +20,10 @@ kubectl apply -f deployment.yaml
 kubectl support-bundle ./support-bundle.yaml
 ```
 
-Slide deck
+## sbctl
 
-https://docs.google.com/presentation/d/1MC_-yq1E0Yp8cGCedWrhLTOvTxBEAFHQCzGefYe6C1Y/edit?usp=sharing
+```sh
+sbctl serve --support-bundle-location=
+```
+
+[Slide deck](https://docs.google.com/presentation/d/1MC_-yq1E0Yp8cGCedWrhLTOvTxBEAFHQCzGefYe6C1Y/edit?usp=sharing)
