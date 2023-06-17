@@ -1,6 +1,6 @@
-module github.com/trelore/talks
+module github.com/alexanderjophus/talks
 
-go 1.18
+go 1.20
 
 require (
 	github.com/frankban/quicktest v1.10.0

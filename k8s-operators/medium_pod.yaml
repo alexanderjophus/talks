@@ -1,0 +1,17 @@
+# medium sized kubernetes pod
+kind: Pod
+apiVersion: v1
+metadata:
+  name: medium-pod
+  labels:
+    app: medium-pod
+spec:
+  containers:
+  - name: medium-pod
+    image: nginx
+    ports:
+    - containerPort: 80
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "2"
