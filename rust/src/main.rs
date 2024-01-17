@@ -13,7 +13,6 @@ enum Slides {
     WhatIsRust,
     WhyLearnRust,
     WhyYouShouldntLearnRust,
-    JumpingShip,
     ErrorHandling,
     Toolchain,
     Ecosystem,
@@ -156,23 +155,6 @@ fn WhyYouShouldntLearnRust(cx: Scope) -> Element {
                         ListItem { content: "You're unfamiliar and have tight deadlines" },
                         ListItem { content: "You're not interested in low level details" },
                     ]
-                }
-            }
-        }
-    }))
-}
-
-fn JumpingShip(cx: Scope) -> Element {
-    cx.render(rsx!(Slide::<Slides> {
-        content: render! {
-            div {
-                flex_direction : "column",
-                border_width : "1px",
-
-                Header { title: "Jumping ship" }
-
-                p {
-                    "Rust needs a different mindset."
                 }
             }
         }
