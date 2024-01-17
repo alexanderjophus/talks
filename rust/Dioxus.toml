@@ -1,0 +1,18 @@
+[application]
+
+# App name
+name = "rust talk"
+
+# The Dioxus platform to default to
+default_platform = "desktop"
+
+# `build` & `serve` output path
+out_dir = "dist"
+
+# The static resource path
+asset_dir = "public"
+
+[web.app]
+[web.watcher]
+[web.resource]
+[web.resource.dev]
