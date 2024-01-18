@@ -16,6 +16,7 @@ enum Slides {
     ErrorHandling,
     Toolchain,
     Ecosystem,
+    JobHunt,
     Final,
 }
 
@@ -235,6 +236,27 @@ fn Ecosystem(cx: Scope) -> Element {
                 div {
                     border_width : "0.5px",
                     "Really, not much you can't do with it."
+                }
+            }
+        }
+    }))
+}
+
+fn JobHunt(cx: Scope) -> Element {
+    cx.render(rsx!(Slide::<Slides> {
+        content: render! {
+            div {
+                flex_direction : "column",
+                border_width : "1px",
+
+                Header { title: "Job hunting" }
+
+                List {
+                    children: vec![
+                        ListItem { content: "Rust just crypto (in my experience)" },
+                        ListItem { content: "More Go jobs" },
+                        ListItem { content: "Pay is roughly equal" },
+                    ]
                 }
             }
         }
